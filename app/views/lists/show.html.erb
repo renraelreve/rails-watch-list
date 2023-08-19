@@ -1,0 +1,27 @@
+<h1>List Detail</h1>
+
+<p> Name of list: <%= @list.name %> </p>
+<hr>
+
+<div class="container">
+  <h1>New bookmark for <%= @list.name %></h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :movie_id, collection: Movie.all.pluck(:title, :id), prompt: "Select a movie" %>
+    <%= f.submit "Submit bookmark", class: "btn btn-primary" %>
+  <% end %>
+  <hr>
+  <h1>Bookmarks created</h1>
+  <ul>
+    <% @list.bookmarks.each do |item| %>
+      <li>
+      <strong>Movie name: </strong><%= item.movie.title %>, <strong>Comments: </strong><%= item.comment%>
+      <%= link_to "Delete",
+        bookmark_path(item),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+      </li>
+    <% end %>
+  </ul>
+  <hr>
+</div>

@@ -1,0 +1,9 @@
+<h1>Watch List</h1>
+
+<ul>
+  <% @lists.each do |item| %>
+    <li><%= item.name %> <%= link_to "See Details", list_path(item)%></li>
+  <% end %>
+</ul>
+
+
