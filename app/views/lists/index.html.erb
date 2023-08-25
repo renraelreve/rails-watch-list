@@ -1,9 +1,67 @@
-<h1>Watch List</h1>
+<div class="container">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "https://i.ebayimg.com/images/g/3dgAAOSwXXxZSphW/s-l500.jpg" %>
+      <% end %>
 
-<ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "My lists", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New list", new_list_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://lonelybrand.com/wp-content/uploads/2013/12/social-media-movies-banner.png);">
+    <div class="container">
+      <h1 style="text-align: center;">Save any kind of movies</h1>
+    </div>
+  </div>
+
+
+  <div class="cards">
+    <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://snhs.sch.im/site/uploads/pages/121/image/Drama.jpg.d/f0b330f00a00c639524074e9576b11a3/750_500_7c8ce57f116a8041c663dbf145c27ac5.jpg?m=1525566489);">
+      <div class="container">
+        <p style="text-align: center;">Save any kind of movies</p>
+      </div>
+    </div>
+
+    <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://snhs.sch.im/site/uploads/pages/121/image/Drama.jpg.d/f0b330f00a00c639524074e9576b11a3/750_500_7c8ce57f116a8041c663dbf145c27ac5.jpg?m=1525566489);">
+      <div class="container">
+        <p style="text-align: center;">Save any kind of movies</p>
+      </div>
+    </div>
+
+    <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://snhs.sch.im/site/uploads/pages/121/image/Drama.jpg.d/f0b330f00a00c639524074e9576b11a3/750_500_7c8ce57f116a8041c663dbf145c27ac5.jpg?m=1525566489);">
+      <div class="container">
+        <p style="text-align: center;">Save any kind of movies</p>
+      </div>
+    </div>
+
+    <div class="card-list" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://snhs.sch.im/site/uploads/pages/121/image/Drama.jpg.d/f0b330f00a00c639524074e9576b11a3/750_500_7c8ce57f116a8041c663dbf145c27ac5.jpg?m=1525566489);">
+      <div class="container">
+        <p style="text-align: center;">Save any kind of movies</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ul>s
+
   <% @lists.each do |item| %>
     <li><%= item.name %> <%= link_to "See Details", list_path(item)%></li>
   <% end %>
 </ul>
 
-
+<%= link_to "New list", new_list_path %></li>
